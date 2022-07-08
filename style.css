@@ -1,0 +1,319 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --btn-color: hsl(240, 37%, 37%);
+  --txt-color: white;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--txt-color);
+  box-shadow: var(--star);
+  transition: all, ease 1.5s;
+}
+.centralizado {
+  margin: auto;
+  max-width: 700px;
+  margin-top: 4.4rem;
+}
+
+/*Animações*/
+.animate__heartBea {
+  animation: heartBeat;
+  animation-duration: 0.8s;
+}
+.animate__flipInX {
+  animation: flipInX;
+  animation-duration: 1s;
+}
+
+/*=======PAGE CONTENT=======*/
+header {
+  display: flex;
+  margin-top: 0.5%;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.6rem 8rem;
+  gap: 1rem;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 16px 80px;
+  gap: 10px;
+}
+.container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 300px;
+  height: 53px;
+
+  background: var(--btn-color);
+  border-radius: 6px;
+
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+
+  transition: all, ease-in 0.5s;
+}
+.container a:hover {
+  background-color: hsl(240, 87%, 79%);
+  transition: all, ease-in 0.5s;
+}
+.container a i {
+  padding-right: 5px;
+}
+h1 {
+  font-family: 'Dancing Script', cursive;
+}
+#share-p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  margin-top: 2.5rem;
+}
+/*========COMPARTILHAMENTO==========*/
+a {
+  text-decoration: none;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: left;
+
+  margin-top: 1.5rem;
+}
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper :is(.btn, .link) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  transition: all, ease-out 0.5s;
+}
+.btn {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: outline 0.25s;
+}
+
+.active .btn,
+.btn:hover {
+  outline: 5px solid var(--bg-color);
+  outline-offset: -4px;
+  transition: all, ease-in 0.1s;
+}
+.item {
+  position: absolute;
+  list-style: none;
+  transition: transform 0.5s;
+  transition-delay: var(--d);
+}
+
+.wrapper.active .item:nth-child(1) {
+  transform: translateX(-65px);
+}
+
+.wrapper.active .item:nth-child(2) {
+  transform: translateY(-65px);
+}
+
+.wrapper.active .item:nth-child(3) {
+  transform: translateX(65px);
+}
+
+.link:hover {
+  color: #fff;
+  transition: background-color 0.25s;
+}
+
+.ig:hover {
+  background-image: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+
+.wa:hover {
+  background-color: rgba(53, 146, 53, 0.671);
+}
+
+.gh:hover {
+  background-color: rgba(128, 128, 128, 0.548);
+}
+body.dark .ig:hover {
+  background-image: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+
+body.dark .wa:hover {
+  background-color: rgba(53, 146, 53, 0.671);
+}
+
+body.dark .gh:hover {
+  background-color: rgba(128, 128, 128, 0.548);
+}
+
+/*========STAR ANIMATION==========*/
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+body {
+  font-family: 'Exo', sans-serif;
+}
+
+.context {
+  width: 100%;
+  position: absolute;
+  z-index: +1;
+}
+
+.area {
+  background: #4e54c8;
+  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+  width: 100%;
+  height: 100vh;
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 25s linear infinite;
+  bottom: -150px;
+}
+
+.circles li:nth-child(1) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(2) {
+  left: 10%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 2s;
+  animation-duration: 12s;
+}
+
+.circles li:nth-child(3) {
+  left: 70%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 4s;
+}
+
+.circles li:nth-child(4) {
+  left: 40%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.circles li:nth-child(5) {
+  left: 65%;
+  width: 20px;
+  height: 20px;
+  animation-delay: 0s;
+}
+
+.circles li:nth-child(6) {
+  left: 75%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 3s;
+}
+
+.circles li:nth-child(7) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+}
+
+.circles li:nth-child(8) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-delay: 15s;
+  animation-duration: 45s;
+}
+
+.circles li:nth-child(9) {
+  left: 20%;
+  width: 15px;
+  height: 15px;
+  animation-delay: 2s;
+  animation-duration: 35s;
+}
+
+.circles li:nth-child(10) {
+  left: 85%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 0s;
+  animation-duration: 11s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+/*====EFFECTS ON DARK MOON======*/
